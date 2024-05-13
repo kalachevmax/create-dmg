@@ -47,6 +47,9 @@ on run (volumeName)
 				set statusbar visible to false
 				set the bounds to {theXOrigin, theYOrigin, theBottomRightX - 10, theBottomRightY - 10}
 			end tell
+
+			set appHome to path to applications folder from user domain
+			make new alias file at container window to appHome with properties {name:"Applications"}
 		end tell
 
 		delay 1
