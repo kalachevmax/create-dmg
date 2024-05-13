@@ -3,3 +3,5 @@
 
 *.dmg
 .DS_Store
+
+.idea
