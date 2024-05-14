@@ -11,6 +11,7 @@ on run (volumeName)
 			set theBottomRightX to (theXOrigin + theWidth)
 			set theBottomRightY to (theYOrigin + theHeight)
 			set dsStore to "\"" & "/Volumes/" & volumeName & "/" & ".DS_STORE\""
+			set appHome to path to applications folder from user domain
 
 			tell container window
 				set current view to icon view
@@ -18,6 +19,7 @@ on run (volumeName)
 				set statusbar visible to false
 				set the bounds to {theXOrigin, theYOrigin, theBottomRightX, theBottomRightY}
 				set statusbar visible to false
+				make new alias file to appHome with properties {name:"Applications"}
 				REPOSITION_HIDDEN_FILES_CLAUSE
 			end tell
 
@@ -47,10 +49,7 @@ on run (volumeName)
 				set statusbar visible to false
 				set the bounds to {theXOrigin, theYOrigin, theBottomRightX - 10, theBottomRightY - 10}
 			end tell
-
-			set appHome to path to applications folder from user domain
-			make new alias file at container window to appHome with properties {name:"Applications"}
-		end tell
+	end tell
 
 		delay 1
 
