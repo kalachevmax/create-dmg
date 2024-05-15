@@ -443,12 +443,6 @@ if [[ -n "$BACKGROUND_FILE" ]]; then
 	cp "$BACKGROUND_FILE" "$MOUNT_DIR/.background/$BACKGROUND_FILE_NAME"
 fi
 
-if [[ -n "$APPLICATION_LINK" ]]; then
-	echo "Making link to Applications dir..."
-	echo $MOUNT_DIR
-	ln -s /Applications "$MOUNT_DIR/Applications"
-fi
-
 if [[ -n "$QL_LINK" ]]; then
 	echo "Making link to QuickLook install dir..."
 	echo $MOUNT_DIR
